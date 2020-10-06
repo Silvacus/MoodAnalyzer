@@ -1,6 +1,7 @@
 package com.capgemini.Moodanalyser;
 
 
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +15,14 @@ public class MoodAnalyserTest {
     
     @Test
     public void givenMessage_WhenOtherThanSad_ShouldReturnHappy() {
-    	MoodAnalyser moodObj = new MoodAnalyser("I am in some Mood");
+    	MoodAnalyser moodObj = new MoodAnalyser("I am in Any Mood");
+    	String mood = moodObj.analyseMood();
+    	Assert.assertEquals("Happy", mood); 
+    }
+    
+    @Test
+    public void givenMessage_WhenNull_ShouldReturnHappy() {
+    	MoodAnalyser moodObj = new MoodAnalyser(null);
     	String mood = moodObj.analyseMood();
     	Assert.assertEquals("Happy", mood); 
     }
